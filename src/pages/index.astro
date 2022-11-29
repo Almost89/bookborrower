@@ -1,12 +1,13 @@
 ---
 import Navbar from "../components/Navbar.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
-
-const booksResponse = await fetch("/books.json");
-const books = booksResponse.json();
-
+import { books } from "./_books.js"
 ---
 <BaseLayout title="Home">
 	<Navbar />
-	{books.map()}
+	<div class="max-w-full overflow-hidden">
+		<div class="whitespace-nowrap inline-block animate-slide">
+			{books.map((book) => (<img class="inline-block w-24 h-32" src={book.cover} alt={book.name} />))}
+		</div>
+	</div>
 </BaseLayout>

@@ -14,6 +14,19 @@ module.exports = {
       fontFamily: {
         vcpoppins: ['Poppins', 'sans-serif'],
       },
+      keyframes: {
+        slide: {
+          '0%': {
+            transform: 'translate3d(0, 0, 0)',
+          },
+          '100%': {
+            transform: 'translate3d(-50%, 0, 0)',
+          },
+        },
+      },
+      animation: {
+        slide: 'slide 20s linear infinite',
+      },
     },
   },
   plugins: [],
